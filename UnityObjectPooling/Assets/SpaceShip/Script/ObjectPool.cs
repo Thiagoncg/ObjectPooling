@@ -6,15 +6,15 @@ public class ObjectPool : MonoBehaviour
 {
     public static ObjectPool instance;
     private List<GameObject> pooledObjects = new List<GameObject>();
-    private int amountToPool = 20;
+    private int amountToPool = 5;
     [SerializeField] private GameObject bulletSpaceshipPrefab;
 
     private void Awake()
     {
-        //if (instance == null)
-        //{
+        if (instance == null)
+        {
             instance = this;
-        //}
+        }
     }
 
     //Em um loop instanciar os objetos e criar um grupo e desativalos.
