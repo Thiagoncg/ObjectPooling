@@ -21,7 +21,7 @@ public class BulletSpaceShop : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Barriers"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

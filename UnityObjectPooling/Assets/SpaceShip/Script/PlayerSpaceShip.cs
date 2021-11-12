@@ -29,7 +29,13 @@ public class PlayerSpaceShip : MonoBehaviour
 
     private void Fire()
     {
-        Instantiate(bulletSpaceShip, bulletPosition.transform.position, Quaternion.identity);
+        //Instantiate(bulletSpaceShip, bulletPosition.transform.position, Quaternion.identity);
+        GameObject bullet = ObjectPool.instance.GetPooledObjet();
+        if (bullet != null)
+        {
+            bullet.transform.position = bulletSpaceShip.transform.position;
+            bullet.transform.rotation = bulletSpaceShip.transform.rotation;
+            bullet.SetActive(true);
+        }
     }
-
 }
